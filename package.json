@@ -11,15 +11,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@bloggrify/core": "1.4.1",
+    "@bloggrify/core": "1.4.5",
     "@bloggrify/mistral": "1.2.1",
     "nuxt": "3.11.2"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxt/eslint-config": "^0.5.7",
     "@playwright/test": "^1.47.2",
-    "autoprefixer": "10.4.17",
-    "eslint": "8.56.0",
-    "sass": "1.70.0"
+    "autoprefixer": "10.4.20",
+    "eslint": "9.12.0",
+    "sass": "1.79.4"
   }
 }
