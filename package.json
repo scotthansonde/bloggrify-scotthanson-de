@@ -2,8 +2,10 @@
     "private": true,
     "name": "bloggrify-scotthanson-de",
     "type": "module",
+    "engines": {
+        "node": "20"
+    },
     "scripts": {
-        "preinstall": "npx playwright install --with-deps",
         "build": "nuxt build",
         "dev": "nuxt dev",
         "generate": "nuxt generate",
