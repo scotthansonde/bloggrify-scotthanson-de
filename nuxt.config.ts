@@ -3,6 +3,11 @@ export default defineNuxtConfig({
     extends: ['@bloggrify/core'],
     compatibilityDate: '2024-07-11',
     modules: ['@nuxtjs/tailwindcss'],
+    routeRules: {
+        '/feed.xml': {
+            redirect: { to: '/rss.xml', statusCode: 301 },
+        },
+    },
     vite: {
         define: {
             'process.env.DEBUG': false,
