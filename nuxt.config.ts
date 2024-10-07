@@ -1,11 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    extends: [
-        '@bloggrify/core',
-        '@bloggrify/mistral',
-    ],
+    extends: ['@bloggrify/core'],
     compatibilityDate: '2024-07-11',
-     vite: {
+    modules: ['@nuxtjs/tailwindcss'],
+    vite: {
         define: {
             'process.env.DEBUG': false,
         },
