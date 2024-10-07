@@ -1,6 +1,6 @@
 {
     "private": true,
-    "name": "bloggrify-mistral-demo",
+    "name": "bloggrify-scotthanson-de",
     "type": "module",
     "scripts": {
         "preinstall": "npx playwright install --with-deps",
