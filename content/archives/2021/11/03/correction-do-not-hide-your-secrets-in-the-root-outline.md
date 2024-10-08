@@ -1,6 +1,7 @@
 ---
-title: "Correction: Do NOT hide your secrets in the root outline"
-date: "2021-11-03"
+title: 'Correction: Do NOT hide your secrets in the root outline'
+date: '2021-11-03'
+cover: 'covers/pexels-pixabay-221529.jpg'
 ---
 
 _Correction 13 November:_ you should _not_ use this for real secrets, since the root outline is not really hidden or secure. But for global variables that you don't mind having exposed it should be OK. <i>Caveat emptor!</i>

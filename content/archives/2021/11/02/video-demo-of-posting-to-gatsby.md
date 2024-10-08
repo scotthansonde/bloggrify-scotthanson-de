@@ -1,6 +1,7 @@
 ---
 title: Video Demo of Posting to Gatsby
-date: "2021-11-02"
+date: '2021-11-02'
+cover: 'covers/pexels-mdx014-799096.jpg'
 ---
 
 Dave Winer asked me to make a quick video of how it looks for a user to post to Gatsby from Drummer. I'm more than happy to oblige!
