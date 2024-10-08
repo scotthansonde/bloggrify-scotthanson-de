@@ -1,6 +1,7 @@
 ---
 title: 'Pinging RSSCloud with a static blog'
 date: '2022-11-23'
+cover: 'covers/pexels-leica-palma-818954161-19395821.jpg'
 ---
 
 One way to connect a blog to RSS readers and communities (like [FeedLand](http://feedland.org)) is to ping an [RSSCloud server](http://rpc.rsscloud.io:5337/docs) whenever your feed changes. But with the Jamstack model of triggering deploys to a static site hoster, I wasn't sure how to implement that, and a [web search](https://duckduckgo.com/?q=jamstack+rsscloud) did not offer much help.

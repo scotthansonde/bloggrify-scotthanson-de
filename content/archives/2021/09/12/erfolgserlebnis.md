@@ -1,6 +1,7 @@
 ---
 title: Erfolgserlebnis
-date: "2021-09-12"
+date: '2021-09-12'
+cover: 'covers/germany-4553759_1920.jpg'
 ---
 
 That German word is literally "experience of success", but a better translation would be "feeling of achievement". And I just had one!

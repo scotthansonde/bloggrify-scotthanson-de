@@ -1,6 +1,7 @@
 ---
 title: Push an Outline with Github Actions
-date: "2021-11-05"
+date: '2021-11-05'
+cover: 'covers/germany-3685989_1920.jpg'
 ---
 
 I've never worked with <a href="https://github.com/features/actions">Github Actions</a> before, but when thinking about how to push an outline from Drummer to GitHub I thought I'd take a look.

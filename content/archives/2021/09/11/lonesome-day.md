@@ -1,6 +1,7 @@
 ---
 title: Lonesome Day
-date: "2021-09-11"
+date: '2021-09-11'
+cover: 'covers/pexels-czapp-arpad-3647289-12729168.jpg'
 ---
 
 I could say it feels like only yesterday, but no, that's not true anymore. It now feels longer ago than that, and that's good.

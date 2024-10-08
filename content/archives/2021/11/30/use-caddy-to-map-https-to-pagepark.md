@@ -1,6 +1,7 @@
 ---
 title: Use Caddy to map HTTPS to PagePark
-date: "2021-11-30"
+date: '2021-11-30'
+cover: 'covers/pexels-pixabay-532826.jpg'
 ---
 
 <i>I've started a GitHub repository at <a href="https://github.com/scotthansonde/DrummerNotes">scotthansonde/DrummerNotes</a> for my notes and code about Drummer. I'm cross-posting my first note on <a href="https://github.com/scotthansonde/DrummerNotes/blob/main/caddy.md">using Caddy with PagePark</a> here. <a href="https://github.com/scripting/pagePark">PagePark</a> is a"simple Node.js folder-based HTTP server that serves static and dynamic pages for domains". It isn't about Drummer per se, but would be a possible path for <a href="http://scripting.com/drummer/blog/2021/11/14/145810.html?title=pageparkUsersASimplerPathToHttps">Drummer itself to run under HTTPS</a>. This post is also a test of uploading Markdown from Drummer directly to a Gatsby blog. </i>

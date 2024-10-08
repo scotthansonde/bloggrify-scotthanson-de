@@ -1,6 +1,7 @@
 ---
 title: papascott.de is now scotthanson.de
 date: '2021-12-14'
+cover: 'covers/pexels-deuspix-27978174.jpg'
 ---
 
 I'm rebranding! I'm now using my name as my digital identity.

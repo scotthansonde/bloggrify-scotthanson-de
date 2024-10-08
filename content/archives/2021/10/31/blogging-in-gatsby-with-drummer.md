@@ -1,6 +1,7 @@
 ---
 title: Blogging in Gatsby with Drummer
-date: "2021-10-31"
+date: '2021-10-31'
+cover: 'covers/hamburg-3071437_1920.jpg'
 ---
 
 It works! At least for me, with a lot of limitations. But this post (and the two previous posts) on my <a href="https://www.gatsbyjs.com/">Gatsby</a>-powered blog was written in <a href="http://docserver.scripting.com/drummer/about.opml">Drummer</a>. The Dummer posts are integrated with the previous posts that were written in Markdown. The code for my blog with the new OPML plugin is on <a href="https://github.com/scotthansonde/papascott-gatsby">GitHub</a>.
