@@ -25,3 +25,5 @@ jobs:
 ```
 
 And that's all! RSSCloud sends a success message in response, but since the GitHub Action doesn't have server running, no one is listening. And, of course, this post is also to test whether the ping is working. 😃
+
+**Update** It doesn't work as expected! It takes a couple of minutes to rebuild my blog after GitHub is updated, so the ping is sent before the RSS file is updated. Back to the drawing board!
