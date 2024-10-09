@@ -11,7 +11,5 @@ jobs:
         steps:
             - name: Ping RSSCloud
               run: |
-                  curl -X POST "http://rpc.rsscloud.io:5337/pleaseNotify" \
-                  -d "url=https://scotthanson.de/rss.xml" \
-                  -d "port=80" \
-                  -d "path=/rssCloudCallback"
+                  curl -X POST "http://rpc.rsscloud.io:5337/ping" \
+                  -d "url=https://scotthanson.de/rss.xml"
