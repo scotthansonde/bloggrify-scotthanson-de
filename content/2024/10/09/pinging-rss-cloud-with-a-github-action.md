@@ -27,3 +27,9 @@ jobs:
 And that's all! RSSCloud sends a success message in response, but since the GitHub Action doesn't have server running, no one is listening. And, of course, this post is also to test whether the ping is working. 😃
 
 **Update** It doesn't work as expected! It takes a couple of minutes to rebuild my blog after GitHub is updated, so the ping is sent before the RSS file is updated. Back to the drawing board!
+
+**Update 2** I ended up solving this a different way. I can run commands on the Hetzner server after the build is complete, so I can use `curl` to send the ping.
+
+```bash
+curl -X POST "http://rpc.rsscloud.io:5337/ping" -d "url=https://scotthanson.de/rss.xml"
+```
