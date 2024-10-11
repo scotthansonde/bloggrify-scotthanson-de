@@ -1,5 +1,6 @@
 import { serverQueryContent } from '#content/server'
-import { Feed } from 'feed'
+import jstoxml from 'jstoxml'
+const { toXML } = jstoxml
 
 export default defineEventHandler(async (event) => {
     const config = useAppConfig()
@@ -11,56 +12,53 @@ export default defineEventHandler(async (event) => {
         .find()
 
     const now = new Date()
-
-    const feed = new Feed({
-        title: config.name,
-        description: config.description,
-        id: url,
-        link: url,
-        language: config.language,
-        favicon: url + '/favicon.ico',
-        copyright: `All rights reserved ${now.getFullYear()}, ${config.name}`,
-        generator: 'bloggrify-smh',
-    })
-
-    feed.addExtension({
-        name: 'customElement',
-        objects: {
-            customChild: {
-                _attributes: {
-                    attr1: 'value1',
-                    attr2: 'value2',
-                },
-                _content: 'Custom content here',
-            },
+    const content = {
+        _name: 'rss',
+        _attrs: {
+            version: '2.0',
         },
-    })
-
+        _content: {
+            channel: [
+                { title: config.name },
+                { description: config.description },
+                { link: url },
+                { docs: 'http://cyber.law.harvard.edu/rss/rss.html' },
+                { language: config.language },
+                { favicon: url + '/favicon.ico' },
+                { copyright: `All rights reserved ${now.getFullYear()}, ${config.name}` },
+                { generator: 'bloggrify-smh' },
+                {
+                    _name: 'cloud',
+                    _attrs: {
+                        domain: 'rpc.rsscloud.io',
+                        port: 5337,
+                        path: '/pleaseNotify',
+                        registerProcedure: 'http-post',
+                    },
+                },
+            ],
+        },
+    }
     docs.forEach((post) => {
         const path = post._path
         if (post.date) {
-            feed.addItem({
-                title: post.title ?? '-',
-                id: url + path,
-                link: url + path,
-                description: post.description,
-                date: new Date(post.date),
-                image: post.cover ? url + '/images/' + post.cover : undefined,
+            content._content.channel.push({
+                item: {
+                    title: post.title ?? '-',
+                    id: url + path,
+                    link: url + path,
+                    guid: url + path,
+                    description: post.description,
+                    pubDate: new Date(post.date).toUTCString(),
+                },
             })
         }
     })
 
-    feed.addExtension({
-        name: 'cloud',
-        objects: {
-            domain: 'rpc.rsscloud.io',
-            port: '5337',
-            path: '/pleaseNotify',
-            registerProcedure: '',
-            protocol: 'http-post',
-        },
-    })
+    const configXML = {
+        indent: '  ',
+    }
 
     event.node.res.setHeader('content-type', 'text/xml')
-    return feed.rss2()
+    return toXML(content, configXML)
 })
