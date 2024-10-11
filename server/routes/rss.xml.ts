@@ -20,8 +20,22 @@ export default defineEventHandler(async (event) => {
         language: config.language,
         favicon: url + '/favicon.ico',
         copyright: `All rights reserved ${now.getFullYear()}, ${config.name}`,
-        generator: 'bloggrify',
+        generator: 'bloggrify-smh',
     })
+
+    feed.addExtension({
+        name: 'customElement',
+        objects: {
+            customChild: {
+                _attributes: {
+                    attr1: 'value1',
+                    attr2: 'value2',
+                },
+                _content: 'Custom content here',
+            },
+        },
+    })
+
     docs.forEach((post) => {
         const path = post._path
         if (post.date) {
@@ -34,6 +48,17 @@ export default defineEventHandler(async (event) => {
                 image: post.cover ? url + '/images/' + post.cover : undefined,
             })
         }
+    })
+
+    feed.addExtension({
+        name: 'cloud',
+        objects: {
+            domain: 'rpc.rsscloud.io',
+            port: '5337',
+            path: '/pleaseNotify',
+            registerProcedure: '',
+            protocol: 'http-post',
+        },
     })
 
     event.node.res.setHeader('content-type', 'text/xml')
