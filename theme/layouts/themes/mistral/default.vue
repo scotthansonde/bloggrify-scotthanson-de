@@ -2,13 +2,12 @@
     <Header />
     <main>
         <div v-if="doc">
-            <div
-                v-if="doc.cover"
-                class="md:flex justify-center mt-24 hidden lg:h-[500px]"
-            >
+            <div v-if="doc.cover" class="md:flex justify-center mt-24 hidden lg:h-[500px]">
                 <NuxtImg
-                    :src="'/images/' + doc.cover"
+                    :src="doc.cover.replace('covers/', '/')"
                     :alt="doc.title"
+                    provider="cloudflare"
+                    width="600"
                     fit="cover"
                     placeholder
                 />
@@ -22,10 +21,7 @@
                             <PageSidebar :toc="doc.body.toc.links" />
                         </div>
 
-                        <div
-                            class="w-full px-5 max-w-none centered-image"
-                            :class="isTocEnabled ? 'lg:w-3/4 ' : ''"
-                        >
+                        <div class="w-full px-5 max-w-none centered-image" :class="isTocEnabled ? 'lg:w-3/4 ' : ''">
                             <ContentRenderer
                                 id="nuxtContent"
                                 :value="doc"
@@ -36,12 +32,17 @@
                 </div>
 
                 <div class="flex items-center justify-center mb-6">
-                    <NuxtLink v-for="tag in doc.tags" :key="tag" :to="`/tags/${tag}`" class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mx-2">
+                    <NuxtLink
+                        v-for="tag in doc.tags"
+                        :key="tag"
+                        :to="`/tags/${tag}`"
+                        class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mx-2"
+                    >
                         {{ tag }}
                     </NuxtLink>
                 </div>
 
-                <hr class="mb-8">
+                <hr class="mb-8" />
 
                 <ShareSection :title="doc.title" :cover="doc.cover" />
 
@@ -59,12 +60,12 @@ import ShareSection from '~/components/themes/mistral/ShareSection.vue'
 import PageSidebar from '~/components/themes/mistral/PageSidebar.vue'
 
 const props = defineProps<{
-    doc: any;
-    docs: any;
-    currentPage: number;
-    total: number;
-    category: string;
-    tag: string;
+    doc: any
+    docs: any
+    currentPage: number
+    total: number
+    category: string
+    tag: string
 }>()
 
 const config = useAppConfig()
@@ -86,13 +87,12 @@ const isTocEnabled =
     h4 a,
     h5 a,
     h6 a {
-        @apply no-underline ;
+        @apply no-underline;
     }
 }
 .margin-image {
-  float: right;
-  max-width: fit-content;
-  margin-top: 0;
+    float: right;
+    max-width: fit-content;
+    margin-top: 0;
 }
-
 </style>
