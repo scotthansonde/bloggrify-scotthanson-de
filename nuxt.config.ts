@@ -8,6 +8,11 @@ export default defineNuxtConfig({
             redirect: { to: '/rss.xml', statusCode: 301 },
         },
     },
+    image: {
+        cloudflare: {
+            baseURL: 'https://images.scotthanson.de',
+        },
+    },
     vite: {
         define: {
             'process.env.DEBUG': false,

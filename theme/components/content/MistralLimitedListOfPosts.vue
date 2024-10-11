@@ -5,16 +5,9 @@
         </template>
         <template #default="{ list }">
             <div class="space-y-8">
-                <div
-                    v-for="article in list"
-                    :key="article._path"
-                    class="flex flex-col"
-                >
+                <div v-for="article in list" :key="article._path" class="flex flex-col">
                     <div class="grid grid-cols-3 gap-4">
-                        <div
-                            class="col-span-2 p-4"
-                            :class="article.cover ? 'col-span-2' : 'col-span-3'"
-                        >
+                        <div class="col-span-2 p-4" :class="article.cover ? 'col-span-2' : 'col-span-3'">
                             <NuxtLink :to="article._path">
                                 <h2 class="text-3xl font-bold mb-2">
                                     {{ article.title }}
@@ -23,12 +16,11 @@
                                     {{ desc(article) }}
                                 </p>
                                 <div class="mb-3">
-                                    <span class="text-sm text-gray-500">{{ formatDate(article.date) }}
+                                    <span class="text-sm text-gray-500"
+                                        >{{ formatDate(article.date) }}
                                         ∙
                                     </span>
-                                    <span class="text-sm text-gray-500">{{
-                                        article.readingTime.text
-                                    }}</span>
+                                    <span class="text-sm text-gray-500">{{ article.readingTime.text }}</span>
                                 </div>
                             </NuxtLink>
                             <div class="flex flex-wrap gap-2">
@@ -42,14 +34,12 @@
                                 </NuxtLink>
                             </div>
                         </div>
-                        <div
-                            v-if="article.cover"
-                            class="col-span-1 p-4 flex justify-center items-center"
-                        >
+                        <div v-if="article.cover" class="col-span-1 p-4 flex justify-center items-center">
                             <NuxtLink :to="article._path" class="w-full">
                                 <NuxtImg
-                                    :src="'/images/' + article.cover"
+                                    :src="article.cover.replace('covers/', '/')"
                                     :alt="article.title"
+                                    provider="cloudflare"
                                     class="w-full object-cover"
                                     sizes="233px sm:400px md:400px"
                                     format="webp"
@@ -59,11 +49,14 @@
                             </NuxtLink>
                         </div>
                     </div>
-                    <hr>
+                    <hr />
                 </div>
 
                 <div class="flex items-center justify-center mt-10">
-                    <NuxtLink to="/archives" class="mt-2 bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded">
+                    <NuxtLink
+                        to="/archives"
+                        class="mt-2 bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 rounded"
+                    >
                         View all posts
                     </NuxtLink>
                 </div>
@@ -80,9 +73,6 @@ const query = {
 }
 
 function desc(article: any): string {
-    return (
-        article.description.slice(0, 200) + '...' ||
-        article.body.slice(0, 200) + '...'
-    )
+    return article.description.slice(0, 200) + '...' || article.body.slice(0, 200) + '...'
 }
 </script>
