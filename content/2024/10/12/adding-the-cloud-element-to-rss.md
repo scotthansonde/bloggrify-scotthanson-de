@@ -47,3 +47,7 @@ return toXML(content, configXML)
 ```
 
 FeedLand seems to accept the feed, and this post will be a test of whether the ping goes through or not. 😃
+
+**Update** It worked! [rsscloud.io](https://rpc.rsscloud.io/) was pinged, and FeedLand updated the feed.
+
+![Screenshot showing FeedLand updated the feed](https://images.scotthanson.de/posts/2024/feedland-success-2024-10-12.png)
