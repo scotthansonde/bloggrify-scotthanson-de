@@ -24,7 +24,6 @@ export default defineEventHandler(async (event) => {
                 { link: url },
                 { docs: 'http://cyber.law.harvard.edu/rss/rss.html' },
                 { language: config.language },
-                { favicon: url + '/favicon.ico' },
                 { copyright: `All rights reserved ${now.getFullYear()}, ${config.name}` },
                 { generator: 'bloggrify-smh' },
                 {
@@ -33,7 +32,8 @@ export default defineEventHandler(async (event) => {
                         domain: 'rpc.rsscloud.io',
                         port: 5337,
                         path: '/pleaseNotify',
-                        registerProcedure: 'http-post',
+                        registerProcedure: '',
+                        protocol: 'http-post',
                     },
                 },
             ],
@@ -45,7 +45,6 @@ export default defineEventHandler(async (event) => {
             content._content.channel.push({
                 item: {
                     title: post.title ?? '-',
-                    id: url + path,
                     link: url + path,
                     guid: url + path,
                     description: post.description,
