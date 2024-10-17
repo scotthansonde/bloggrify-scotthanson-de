@@ -20,8 +20,7 @@ const parseHTML = async (md: string) => {
 export default defineEventHandler(async (event) => {
     const config = useAppConfig()
     const url = config.url?.replace(/\/$/, '')
-    const host = event.node.req.headers.host
-
+    const host = import.meta.dev ? event.node.req.headers.host : 'localhost:3000'
     const docs = await serverQueryContent(event)
         .where({ hidden: { $ne: true } })
         .sort({ date: -1 })
@@ -63,7 +62,6 @@ export default defineEventHandler(async (event) => {
 
             const md = await $fetch(mdUrl, { responseType: 'text' })
             const parsedHTML = await parseHTML(md)
-            console.log(parsedHTML)
             content._content.channel.push({
                 item: {
                     title: post.title ?? '-',
