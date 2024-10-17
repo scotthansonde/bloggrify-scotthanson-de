@@ -28,6 +28,11 @@ export default defineNuxtConfig({
             },
         },
     },
+    nitro: {
+        prerender: {
+            ignore: ['/rss.xml'],
+        },
+    },
     hooks: {
         'nitro:config': (nitroConfig) => {
             nitroConfig.publicAssets ||= []
