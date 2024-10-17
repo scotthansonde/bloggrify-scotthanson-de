@@ -1,3 +1,5 @@
+import { resolvePath } from 'nuxt/kit'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     extends: ['./theme', '@bloggrify/core'],
@@ -24,6 +26,16 @@ export default defineNuxtConfig({
                     api: 'modern-compiler',
                 },
             },
+        },
+    },
+    hooks: {
+        'nitro:config': (nitroConfig) => {
+            nitroConfig.publicAssets ||= []
+            nitroConfig.publicAssets.push({
+                dir: `${process.cwd()}/content`,
+                baseURL: '/markdown/',
+                maxAge: 60 * 60 * 24 * 365, // 1 year
+            })
         },
     },
 })
