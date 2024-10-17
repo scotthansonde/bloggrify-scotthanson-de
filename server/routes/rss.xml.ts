@@ -67,7 +67,6 @@ export default defineEventHandler(async (event) => {
             content._content.channel.push({
                 item: {
                     title: post.title ?? '-',
-                    id: url + path,
                     link: url + path,
                     guid: url + path,
                     // description: post.description,
