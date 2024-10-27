@@ -7,6 +7,7 @@ node_modules
 .output
 .data
 .env
+.obsidian
 dist
 content-old
 .DS_Store
