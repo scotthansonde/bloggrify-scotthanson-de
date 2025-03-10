@@ -14,10 +14,10 @@
         "lint": "eslint ."
     },
     "dependencies": {
-        "@bloggrify/core": "1.4.5",
+        "@bloggrify/core": "2.0.2",
         "jstoxml": "^5.0.2",
         "jstransformer-cdata": "^1.0.0",
-        "nuxt": "^3.13.2",
+        "nuxt": "^3.16.0",
         "rehype-stringify": "^10.0.1",
         "remark-frontmatter": "^5.0.0",
         "remark-parse": "^11.0.0",
@@ -26,12 +26,12 @@
         "xml2js": "^0.6.2"
     },
     "devDependencies": {
-        "@nuxt/eslint-config": "^0.6.0",
-        "@playwright/test": "^1.48.1",
-        "@types/jstoxml": "^2.0.4",
+        "@nuxt/eslint-config": "^1.2.0",
+        "@playwright/test": "^1.51.0",
+        "@types/jstoxml": "^5.0.0",
         "@types/xml2js": "^0.4.14",
-        "autoprefixer": "10.4.20",
-        "eslint": "9.12.0",
-        "sass": "1.80.2"
+        "autoprefixer": "10.4.21",
+        "eslint": "9.22.0",
+        "sass": "1.85.1"
     }
 }
