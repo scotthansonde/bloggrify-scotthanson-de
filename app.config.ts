@@ -1,8 +1,8 @@
 export default defineAppConfig({
     logo: 'https://fav.farm/😎',
 
-    // now an env variable
-    // url: 'https://scotthanson.de/',
+    // now an env variable, but needed for RSS?
+    url: 'https://scotthanson.de/',
 
     theme: 'mistral',
 
