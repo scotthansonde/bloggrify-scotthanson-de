@@ -20,8 +20,9 @@ export default defineAppConfig({
     },
 
     socials: {
-        twitter: 'https://twitter.com/scotthansonde',
-        twitter_username: 'scotthansonde',
+        // twitter: 'https://twitter.com/scotthansonde',
+        // twitter_username: 'scotthansonde',
+        bluesky: 'https://bsky.app/profile/scotthanson.de',
         mastodon: 'https://norden.social/@scotthansonde',
         github: 'https://github.com/scotthansonde',
         // mastodon: 'https://piaille.fr',
@@ -34,7 +35,7 @@ export default defineAppConfig({
         // possible values : 'facebook', 'twitter', 'linkedin', 'email', 'pinterest', 'reddit', 'pocket', 'whatsapp', 'telegram', 'skype'
         // see https://github.com/stefanobartoletti/nuxt-social-share
         // sharing_networks: ['facebook', 'twitter', 'linkedin', 'email', 'pinterest', 'reddit', 'pocket', 'whatsapp', 'telegram', 'skype']
-        sharing_networks: [],
+        // sharing_networks: [],
     },
 
     newsletter: {
@@ -63,8 +64,9 @@ export default defineAppConfig({
             description: "I'm here and you're not",
             avatar: 'https://gravatar.com/avatar/910fa78695455feb1e28aecb4ce3debf?size=256&cache=1728119757242',
             socials: {
-                twitter: 'https://twitter.com/scotthansonde',
-                twitter_username: 'scotthansonde',
+                // twitter: 'https://twitter.com/scotthansonde',
+                // twitter_username: 'scotthansonde',
+                bluesky: 'https://bsky.app/profile/scotthanson.de',
                 mastodon: 'https://norden.social/@scotthansonde',
                 // youtube: 'https://youtube.com/@eventuallycoding',
                 // linkedin: 'https://www.linkedin.com/in/hugolassiege/',

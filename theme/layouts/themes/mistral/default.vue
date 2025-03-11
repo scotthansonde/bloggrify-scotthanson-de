@@ -1,5 +1,5 @@
 <template>
-    <Header />
+    <MistralHeader />
     <main>
         <div v-if="doc">
             <div v-if="doc.cover" class="md:flex justify-center mt-24 hidden lg:h-[500px]">
@@ -7,7 +7,6 @@
                     :src="doc.cover.replace('covers/', '/')"
                     :alt="doc.title"
                     provider="cloudflare"
-                    width="600"
                     fit="cover"
                     placeholder
                 />
@@ -50,22 +49,17 @@
             </div>
         </div>
     </main>
-    <Footer />
+    <MistralFooter />
 </template>
 <script setup lang="ts">
-import Header from '~/components/themes/mistral/Header.vue'
-import Footer from '~/components/themes/mistral/Footer.vue'
 import ArticleHeader from '~/components/themes/mistral/ArticleHeader.vue'
 import ShareSection from '~/components/themes/mistral/ShareSection.vue'
 import PageSidebar from '~/components/themes/mistral/PageSidebar.vue'
+import MistralHeader from '~/components/themes/mistral/MistralHeader.vue'
+import MistralFooter from '~/components/themes/mistral/MistralFooter.vue'
 
 const props = defineProps<{
     doc: any
-    docs: any
-    currentPage: number
-    total: number
-    category: string
-    tag: string
 }>()
 
 const config = useAppConfig()
@@ -89,10 +83,5 @@ const isTocEnabled =
     h6 a {
         @apply no-underline;
     }
-}
-.margin-image {
-    float: right;
-    max-width: fit-content;
-    margin-top: 0;
 }
 </style>

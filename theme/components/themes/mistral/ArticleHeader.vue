@@ -50,8 +50,8 @@
                 <NuxtImg
                     :src="author.avatar"
                     loading="lazy"
-                    alt=""
-                    class="mr-3 w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800"
+                    :alt="`Avatar of ${author.name}`"
+                    class="mr-3 w-10 h-10 rounded-full bg-slate-50"
                 />
                 <div>
                     <div class="font-bold text-slate-500 text-xs">
@@ -65,7 +65,7 @@
 <script setup lang="ts">
 const props = defineProps<{
     article: any;
-}>();
+}>()
 
-const author = findAuthor(props.article.author);
+const author = findAuthor(props.article.author)
 </script>

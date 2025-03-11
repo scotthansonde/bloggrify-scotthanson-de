@@ -1,5 +1,5 @@
 <template>
-    <div v-if="sharingNetworks.length > 0">
+    <div v-if="sharingNetworks">
         <span class="text-sm md:text-xl"> Share </span>
         <div class="mt-4 flex flex-row gap-2">
             <SharingButtons

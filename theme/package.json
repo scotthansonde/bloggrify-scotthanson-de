@@ -2,7 +2,7 @@
     "name": "@bloggrify/mistral",
     "description": "A Nuxt.js theme for Bloggrify",
     "license": "All Rights Reserved",
-    "version": "1.2.1",
+    "version": "1.2.3",
     "author": "Eventually Coding <contact@eventuallycoding.com>",
     "type": "module",
     "main": "./nuxt.config.ts",
@@ -14,11 +14,11 @@
         "components",
         "composables",
         "layouts",
-        "app.config.ts",
         "nuxt.config.ts",
         "tailwind.config.js"
     ],
     "scripts": {
+        "preinstall": "npx playwright install",
         "build": "nuxt build",
         "dev": "nuxt dev",
         "generate": "nuxt generate",
@@ -26,13 +26,14 @@
         "lint": "eslint ."
     },
     "dependencies": {
-        "@bloggrify/core": "1.4.1",
-        "nuxt": "3.11.2"
+        "@bloggrify/core": "2.0.0",
+        "nuxt": "3.14.1592"
     },
     "devDependencies": {
-        "@nuxt/eslint-config": "^0.2.0",
-        "autoprefixer": "10.4.17",
-        "eslint": "8.56.0",
-        "sass": "1.70.0"
+        "@playwright/test": "^1.45.1",
+        "@nuxt/eslint-config": "^0.7.1",
+        "autoprefixer": "10.4.20",
+        "eslint": "^8.57.1",
+        "sass": "1.81.0"
     }
 }
