@@ -6,4 +6,11 @@ export default defineNuxtRouteMiddleware((to) => {
             replace: true,
         })
     }
+    // Forgot the date in the path
+    if (to.path === '/2025/03/beautiful-things') {
+        return navigateTo('/2025/03/10/beautiful-things/', {
+            redirectCode: 301,
+            replace: true,
+        })
+    }
 })
